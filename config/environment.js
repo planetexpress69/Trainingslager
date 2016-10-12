@@ -25,6 +25,8 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.APP.API_HOST = 'http://www.teambender.de/htl/api';
+    ENV.APP.API_NAMESPACE = 'v1';
   }
 
   if (environment === 'test') {
