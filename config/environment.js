@@ -4,8 +4,8 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'htl',
     environment: environment,
-    rootURL: '/',
-    locationType: 'auto',
+    rootURL: '/htl',
+    locationType: 'hash',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -27,6 +27,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
     ENV.APP.API_HOST = 'http://www.teambender.de/htl/api';
     ENV.APP.API_NAMESPACE = 'v1';
+    ENV.rootURL = '/';
   }
 
   if (environment === 'test') {
