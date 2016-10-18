@@ -1,63 +1,61 @@
 <div class="ui container">
 	<div class="ui one column stackable grid">
 		<div class="wide column">
-
-
-
-			
 			<div class="ui container rsc-back">
-				<p style="font-size: 70px; font-weight: bold; color: #4183C4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{sum}}</p>
+				<p class="rsc-back-broiler">{{sum}}</p>
+				<p class="rsc-back-coffee">{{breakfastSum}}</p>
+				<p style="clear: both"></p>
 			</div>
-			<table class="ui table">
-
-				<tbody>
-					<tr>
-						<td class="left aligned">
-							<div class="ui input">
-								{{input type="text" placeholder="Bootsname" value=newName}}
-							</div>
-						</td>
-						<td>
-							<div class="ui input">
-								{{input type="text" placeholder="Crew" value=newCrew}}
-							</div>
-						</td>
-						<td>
-							<div class="ui input">
-								{{input type="text" placeholder="Anzahl Broiler" value=newBroiler}}
-							</div>
-						</td>
-            <td class="right aligned">
-            {{#if add}}
-			      <button class="ui circular primary button" {{action "createParticipant"}} disabled={{disabled}}>Hinzufügen</button> 
-            {{else}}
-			      <button class="ui circular primary button" {{action "changeParticipant" idToChange}} disabled={{disabled}}>Ändern</button>
-			      <button class="ui circular button" {{action "cancel"}} disabled={{disabled}}>Abbrechen</button> 
-            {{/if}}
-            </td>
+			<div class="ui container">
+				<table class="ui celld table">
+					<tbody>
+						<tr>
+							<td class="left aligned">
+								<div class="ui input">
+									{{input type="text" placeholder="Bootsname" value=newName}}
+								</div>
+							</td>
+							<td>
+								<div class="ui input">
+									{{input type="text" placeholder="Crew" value=newCrew}}
+								</div>
+							</td>
+							<td>
+								<div class="ui input">
+									{{input type="text" placeholder="Anzahl Broiler" value=newBroiler}}
+								</div>
+							</td>
+							<td>
+								<div class="ui input">
+									{{input type="text" placeholder="Anzahl Frühstück" value=newBreakfast}}
+								</div>
+							</td>
+							<td class="right aligned">
+								{{#if add}}
+								<button class="ui circular primary button" {{action "createParticipant"}} disabled={{disabled}}>Hinzufügen</button>								{{else}}
+								<button class="ui circular primary button" {{action "changeParticipant" idToChange}} disabled={{disabled}}>Ändern</button>
+								<button class="ui circular button" {{action "cancel"}} disabled={{disabled}}>Abbrechen</button> {{/if}}
+							</td>
 						</tr>
-
-							{{#each list as |participant|}}
-
-							<tr>
-								<td class="left aligned ui transition horizontal flip">{{participant.name}}</td>
-								<td>{{participant.crew}}</td>
-								<td>{{participant.broiler}} Broiler</td>
-								<td class="right aligned">
-									<button class="circular ui icon button" {{action 'deleteParticipant' participant}}>
+						{{#each list as |participant|}}
+						<tr>
+							<td class="left aligned ui transition horizontal flip">{{participant.name}}</td>
+							<td>{{participant.crew}}</td>
+							<td>{{participant.broiler}} Broiler</td>
+							<td>{{participant.breakfast}} Frühstück</td>
+							<td class="right aligned">
+								<button class="circular ui icon button" {{action 'deleteParticipant' participant}}>
                 <i class="icon trash"></i>
               </button>
-									<button class="circular ui icon button" {{action 'editParticipant' participant}}>
+								<button class="circular ui icon button" {{action 'editParticipant' participant}}>
                 <i class="icon edit"></i>
               </button>
-								</td>
-							</tr>
-							{{/each}}
-				</tbody>
-			</table>
+							</td>
+						</tr>
+						{{/each}}
+					</tbody>
+				</table>
+			</div>
 		</div>
-
-
 	</div>
-
 </div>

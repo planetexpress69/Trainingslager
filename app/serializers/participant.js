@@ -7,7 +7,7 @@ export default DS.JSONAPISerializer.extend({
     var tamedPayload = {};
     tamedPayload["data"] = payload;
 
-    return this._super(store, primaryModelClass, tamedPayload, id, requestType)
+    return this._super(store, primaryModelClass, tamedPayload, id, requestType);
   },
 
 });
