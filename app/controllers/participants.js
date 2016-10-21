@@ -31,6 +31,11 @@ export default Ember.Controller.extend({
       this.set('newBreakfast', participant.get('breakfast'));
       this.set('idToChange', participant.get('id'))
       this.set('add', false);
+      Ember.$('html, body').animate({
+            scrollTop: $('#newName').offset().top
+        }, 'slow', function() { 
+            $('#newName').focus(); 
+        });
     },
   }
 });
