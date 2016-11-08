@@ -6,21 +6,24 @@ export default DS.JSONAPIAdapter.extend({
 
   urlForFindRecord(id, modelName, snapshot) {
     if (modelName === 'participant') {
-      return this.get('host') + '/' + this.get('namespace') + '/' + modelName + '/' + id + '?id=' + id;
+      //return this.get('host') + '/' + this.get('namespace') + '/' + modelName + '/' + id + '?id=' + id;
+      return this.get('host') + '/' + this.get('namespace') + '/' + modelName + '/' + id;
     }
     return this._buildURL(modelName, id);
   },
 
   urlForUpdateRecord(id, modelName, snapshot) {
     if (modelName === 'participant') {
-      return this.get('host') + '/' + this.get('namespace') + '/' + modelName + '/' + id + '?id=' + id;
+      //return this.get('host') + '/' + this.get('namespace') + '/' + modelName + '/' + id + '?id=' + id;
+      return this.get('host') + '/' + this.get('namespace') + '/' + modelName + '/' + id;
     }
     return this._buildURL(modelName, id);
   },
 
    urlForDeleteRecord(id, modelName, snapshot) {
      if (modelName === 'participant') {
-      return this.get('host') + '/' + this.get('namespace') + '/' + modelName + '/' + id + '?id=' + id;
+      //return this.get('host') + '/' + this.get('namespace') + '/' + modelName + '/' + id + '?id=' + id;
+      return this.get('host') + '/' + this.get('namespace') + '/' + modelName + '/' + id;
     }
     return this._buildURL(modelName, id);
   },

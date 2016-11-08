@@ -49,14 +49,21 @@ export default Ember.Route.extend({
 
     deleteParticipant(participant) {
       var _this = this;
-      this.store.findRecord('participant', participant.id, { backgroundReload: true })
+
+      this.get('store').find('participant', participant.id)
+        .then(participant2 => participant2.destroyRecord())
+        .then(() => this.recalc());
+      //transitionTo('participants')
+      /*
+      this.store.findRecord('participant', participant.id)
         .then(function (resource) {
           resource.deleteRecord();
           resource.get('isDeleted'); // => true
-          resource.save().then(function(/* f */) {
+          resource.save().then(function(f) {
             _this.recalc();
           });
         });
+        */
     },
 
     createParticipant() {
