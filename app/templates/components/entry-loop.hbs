@@ -1,0 +1,14 @@
+{{#each data as |participant index|}}
+  {{single-entry
+    isDirty=isDirty
+    index=index
+    id=participant.id 
+    name=participant.name
+    crew=participant.crew
+    broiler=participant.broiler
+    breakfast=participant.breakfast 
+    update=(action "update")
+    delete=(action "delete")
+    cancelEditing=(action "cancelEditing")
+  }}
+{{/each}}

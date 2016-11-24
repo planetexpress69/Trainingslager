@@ -1,0 +1,33 @@
+{{#if isEditing}}
+<tr>
+  <td class="right aligned ui transition horizontal flip">{{number}}</td>
+  <td class="left aligned ui transition horizontal flip"><div class="ui input">{{input id="activeinput" type="text" value=name}}</div></td>
+  <td><div class="ui input">{{input type="text"value=crew}}</div></td>
+  <td><div class="ui input">{{input type="text" value=broiler}}</div></td>
+  <td><div class="ui input">{{input type="text" value=breakfast}}</div></td>
+  <td class="right aligned">
+    <button class="circular ui icon blue button" {{action 'saveParticipant'}}>
+      <i class="icon save"></i>
+    </button>
+    <button class="circular ui icon button" {{action 'cancelEditing'}}>
+      <i class="icon cancel"></i>
+    </button>
+  </td>
+</tr>
+{{else}}
+<tr>
+  <td class="right aligned ui transition horizontal flip">{{number}}</td>
+  <td class="left aligned ui transition horizontal flip">{{name}}</td>
+  <td>{{crew}}</td>
+  <td>{{broiler}} Broiler</td>
+  <td>{{breakfast}} Frühstück</td>
+  <td class="right aligned">
+    <button class="circular ui icon button {{disabled}}" {{action 'deleteParticipant' id}}>
+      <i class="icon trash"></i>
+    </button>
+    <button id="edit-{{id}}" class="circular ui icon button {{disabled}}" {{action 'editParticipant'}}>
+      <i class="icon edit"></i>
+    </button>
+  </td>
+</tr>
+{{/if}}

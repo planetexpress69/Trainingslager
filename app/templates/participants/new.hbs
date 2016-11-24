@@ -1,0 +1,27 @@
+<div class="ui container">
+  <table class="ui celled striped table">
+    <tbody>
+      <td class="left aligned ui transition horizontal flip">
+        <div class="ui input">{{input id="activeinput" type="text" value=model.name placeholder="Bootsname"}}</div>
+      </td>
+      <td>
+        <div class="ui input">{{input type="text"value=model.crew placeholder="Crew"}}</div>
+      </td>
+      <td>
+        <div class="ui input">{{input type="text" value=model.broiler placeholder="Anzahl der Broiler"}}</div>
+      </td>
+      <td>
+        <div class="ui input">{{input type="text" value=model.breakfast placeholder="Anzahl der Broiler"}}</div>
+      </td>
+      <td>
+        <div class="ui right floated small primary labeled icon button" {{action 'saveAndGetBack'}}>
+          <i class="save icon"></i> Save
+        </div>
+      </td>
+    </tbody>
+    <tfoot>
+    </tfoot>
+  </table>
+</div>
+<br>
+<br>
