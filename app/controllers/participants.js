@@ -41,6 +41,7 @@ export default Ember.Controller.extend({
       participant.destroyRecord().then(function () {
         store.findAll('participant', { reload: true }).then(function (list) {
           _this.set('list', list);
+          Ember.$(document).attr('title', 'HTL2016: ' + list.content.length + ' Boote');
           var sum = 0;
           var breakfastSum = 0;
           list.forEach(function (item) {
