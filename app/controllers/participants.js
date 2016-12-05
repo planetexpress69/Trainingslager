@@ -1,21 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+
   list: null,
   idToDelete: null,
   isDirty: false,
-  //newName: '',
-  //newCrew: '',
-  //newBroiler: '',
-  //newBreakfast: '',
-  //idToChange: null,
-  //add: true,
-  //sum: 0,
-  //disabled: Ember.computed('newName', function() {
-  //  return Ember.isEmpty(this.get('newName'));
-  //}),
-
-
 
   disabled: Ember.computed('isDirty', function () {
     return this.get('isDirty') === true ? 'disabled' : '';
@@ -54,7 +43,6 @@ export default Ember.Controller.extend({
       });
     });
   },
-
 
   actions: {
 
