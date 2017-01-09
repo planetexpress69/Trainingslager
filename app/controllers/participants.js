@@ -26,7 +26,7 @@ export default Ember.Controller.extend({
   getRidOf(id) {
     var store = this.get('store');
     var _this = this;
-    store.findRecord('participant', id).then(function (participant) {
+    store.findRecord('participant', id, { reload: true, backgroundReload: false }).then(function (participant) {
       participant.destroyRecord().then(function () {
         store.findAll('participant', { reload: true }).then(function (list) {
           _this.set('list', list);
@@ -99,7 +99,7 @@ export default Ember.Controller.extend({
       var breakfast = attrs.breakfast.value;
       var store = this.get('store');
       var _this = this;
-      store.findRecord('participant', id).then(function (participant) {
+      store.findRecord('participant', id, { reload: true, backgroundReload: false }).then(function (participant) {
         participant.name = name;
         participant.broiler = broiler;
         participant.breakfast = breakfast;
