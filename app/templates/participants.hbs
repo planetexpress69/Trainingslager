@@ -1,15 +1,15 @@
 <div class="ui container">
 	<div class="ui one column stackable grid">
 		<div class="wide column">
-			
+
 			<div class="ui container rsc-back">
 				<p class="rsc-back-broiler">{{sum}}</p>
 				<p class="rsc-back-coffee">{{breakfastSum}}</p>
-				<p style="clear: both"></p>
 			</div>
 
+
 			{{outlet}}
-			
+
 			<div class="ui container">
 				<table class="ui celled striped table">
 					{{#if isDirty}}
@@ -25,10 +25,10 @@
     				</tr>
  					</thead>
 					{{/if}}
-					<tbody>						
+					<tbody>
 						{{entry-loop data=list isDirty=isDirty update=(action "update") delete=(action "delete") cancelEditing=(action "cancelEditing")}}
 					</tbody>
-					
+
 				</table>
 			</div>
 		</div>
